@@ -3,6 +3,7 @@
 **/out
 **/*.iml
 .git
+*/**/.gitignore
 
 ### Eclipse ###
 .apt_generated
