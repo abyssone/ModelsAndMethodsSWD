@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +8,7 @@ public class Main {
         Map<String, String[]> engLatDictionary = new HashMap<>();
         Map<String, String[]> latEngDictionary = new HashMap<>();
 
+        System.out.println("Enter Eng-Lat dictionary (\"0\" for exit)");
         while(!input.equals("0")){
             input = scanner.nextLine();
             splitInput = stringToKeyValues(input);
@@ -26,8 +24,11 @@ public class Main {
                 }
             }
         }
+        System.out.println("Lat-Eng dictionary:");
+        for(Map.Entry<String, String[]> entry: latEngDictionary.entrySet()){
+            System.out.println(entry.getKey() + " - " + String.join(", ", entry.getValue()));
+        }
 
-        System.out.println("eh");
     }
     private static String[] stringToKeyValues(String str){
         String[] result = str.split("(\\s\\-\\s)|(\\,\\s)");
